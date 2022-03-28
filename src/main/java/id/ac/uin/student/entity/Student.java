@@ -1,11 +1,15 @@
 package id.ac.uin.student.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "student")
 public class Student {
@@ -29,5 +33,8 @@ public class Student {
     @Column(name = "phone_number", unique = true)
     private String phoneNumber;
 
+    @NotEmpty
+    @Column(nullable = false, unique = true)
+    private String jurusan;
 
 }
